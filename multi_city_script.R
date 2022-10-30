@@ -26,21 +26,22 @@ cities <- c('antofagasta', 'arica', 'belo_horizonte', 'bogota', 'buenos_aires',
 #            'santiago', 'sao_paulo', 'temuco_padrelascasas', 'valdivia')
 # 
 # #African & Indian cities
- cities <- c('accra','cape_town','kisumu', 'nairobi', 'port_louis', 'bangalore', 'delhi', 'vizag')
- 
+# cities <- c('accra','cape_town','kisumu', 'nairobi', 'port_louis', 'bangalore', 'delhi', 'vizag')
+
 # number of times input values are sampled from each input parameter distribution
+cities <<- c('sao_paulo')
 
-input_parameter_file <- "InputParameters_v15.0.xlsx"
+input_parameter_file <<- "InputParameters_v18.0.xlsx"
 
-output_version <- "v0.3" # gives the version number of the output documents, independent of the input parameter file name
+output_version <<- "v0.3" # gives the version number of the output documents, independent of the input parameter file name
 author <- "AA"
 comment <- "Added CO2 emission sampling"
 
 # scenario definition
-scenario_name <- "GLOBAL"
-reference_scenario <- 'Baseline'
+scenario_name <<- "GLOBAL"
+reference_scenario <<- 'Baseline'
 
-compute_mode <- 'constant' # constant parameters from the given parameters
+compute_mode <<- 'constant' # constant parameters from the given parameters
 ############################### No need to change the following ##################################
 # keep record when code started:
 starttime <- Sys.time()
@@ -172,6 +173,7 @@ ap_dr_quantile <-  F
 
 ithim_objects <- outcome <- outcome_pp <- yll_per_hundred_thousand <- list()
 
+sin_exponent_sum <- 1.5
 #toplot <- matrix(0, nrow = 3, ncol = length(cities)) #3 scenarios, 20 cities
 #ithim_objects <- list()
 print(system.time(for(city in cities){
