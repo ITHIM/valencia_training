@@ -21,7 +21,7 @@ if (!require("drpa",character.only = TRUE)) {
 }
 
 # Specify list of cities. We are only using SP for now.
-cities <<- c('sao_paulo')
+cities <- 'sao_paulo'
 
 # Specify parameters file for SP specific and global vars
 input_parameter_file <<- "InputParameters_v18.0.xlsx"

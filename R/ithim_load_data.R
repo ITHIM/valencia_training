@@ -169,16 +169,17 @@ ithim_load_data <- function(speeds =
                         "Other pharynx cancer")
   head_neck <- GBD_DATA %>% filter(cause_name %in% head_neck_causes)
   GBD_DATA <- GBD_DATA %>% filter(!cause_name %in% head_neck_causes)
-  
   # Adding causes by measure, sex and age
   add_causes <- head_neck %>% 
     group_by(measure_name.x, sex_name, age_name) %>% 
-    mutate(val = sum(val)) %>% 
+    summarise(val = sum(val)) %>% 
     mutate(cause_name = "Head and neck cancer",
            location_name = unique(GBD_DATA$location_name)) %>% 
     left_join(GBD_DATA %>% 
                 dplyr::select(sex_name, age_name, population) %>% distinct(),
-              by = c("sex_name", "age_name")) 
+              by = c("sex_name", "age_name")) %>% 
+    dplyr::select(measure_name.x, location_name, sex_name, age_name, cause_name,
+                  val, population)
   # Appending head and neck to GBD dataset
   GBD_DATA <- GBD_DATA %>% bind_rows(add_causes)
   

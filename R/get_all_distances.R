@@ -34,7 +34,7 @@ get_all_distances <- function(ithim_object){
   
   # Recalculate dist by using total distance - using overall population
   dist <- trip_scen_sets %>% group_by(stage_mode, scenario) %>% 
-    mutate(ave_dist = sum(stage_distance) / total_synth_pop * sum(pop$population)) %>% spread(scenario, ave_dist)
+    summarise(ave_dist = sum(stage_distance) / total_synth_pop * sum(pop$population)) %>% spread(scenario, ave_dist)
 
   if ('pedestrian' %in% dist$stage_mode && 'walk_to_pt' %in% dist$stage_mode){
     dist[dist$stage_mode == "pedestrian",][2:ncol(dist)] <- dist[dist$stage_mode == "pedestrian",][2:ncol(dist)] +
@@ -57,7 +57,7 @@ get_all_distances <- function(ithim_object){
   # get average total distances by sex and age cat
   journeys <- trip_scen_sets %>% 
     group_by (age_cat,sex,stage_mode, scenario) %>% 
-    mutate(tot_dist = sum(stage_distance) / total_synth_pop)
+    summarise(tot_dist = sum(stage_distance) / total_synth_pop)
   trip_scen_sets <- NULL
   
   # Add population values by sex and age category
