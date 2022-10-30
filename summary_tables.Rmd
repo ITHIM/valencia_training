@@ -143,7 +143,7 @@ write_csv(bind_rows(dat), "results/multi_city/scen_prop.csv")
 
 ## Case study specific propensities
 ```{r message=F, error=F, warning=FALSE}
-get_scen_settings <- ithimr::get_scenario_settings()
+get_scen_settings <- ithimr::get_scenario_settings(cities = cities)
 
 ```
 
