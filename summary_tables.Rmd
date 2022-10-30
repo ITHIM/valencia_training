@@ -163,7 +163,7 @@ suppressWarnings({
 trip_prop <- list()
 
 for (city in cities) { # Loop for each city
-  df <- io[[city]]$trip_scen_sets
+  df <- io[[city]]$trip_scen_sets |> filter(!stage_mode %in% c("car_driver", "bus_driver"))
   u_trips <- df %>% dplyr::filter(scenario == "Baseline") %>% 
     summarise(uid = n_distinct(trip_id)) %>% as.numeric()
   td <- df %>% distinct(trip_id, scenario, .keep_all = T) %>% 
