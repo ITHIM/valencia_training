@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="overview_files/libs/clipboard/clipboard.min.js"></script>
-<script src="overview_files/libs/quarto-html/tabby.min.js"></script>
-<script src="overview_files/libs/quarto-html/popper.min.js"></script>
-<script src="overview_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="overview_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="overview_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
-<link href="overview_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="implementation_files/libs/clipboard/clipboard.min.js"></script>
+<script src="implementation_files/libs/quarto-html/tabby.min.js"></script>
+<script src="implementation_files/libs/quarto-html/popper.min.js"></script>
+<script src="implementation_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="implementation_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="implementation_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
+<link href="implementation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.624">
 
   <meta name="author" content="Ali Abbas">
-  <title>Overview of ITHIM-R</title>
+  <title>Implementation of ITHIM-R to Sao Paulo city</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="overview_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="overview_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="implementation_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="implementation_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -88,12 +88,12 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="overview_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="implementation_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link rel="stylesheet" href="theme/theme.css">
-  <link href="overview_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="overview_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="overview_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="overview_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="implementation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="implementation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="implementation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="implementation_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -384,610 +384,62 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">Overview of ITHIM-R</h1>
+  <h1 class="title">Implementation of ITHIM-R to Sao Paulo city</h1>
   <p class="author">Ali Abbas</p>
 </section>
 
 <section>
-<section id="getting-started-with-required-software" class="title-slide slide level1 center">
-<h1>Getting Started with Required Software</h1>
+<section id="application-of-ithim-r" class="title-slide slide level1 center">
+<h1>Application of ITHIM-R</h1>
 
-</section>
-<section id="install-r" class="slide level2">
-<h2>Install R</h2>
-<p>Please install R (version: R-4.2.1) from: <a href="The%20Comprehensive%20R%20Archive%20Network">https://cran.r-project.org/</a></p>
-
-<img data-src="images/paste-51CD4F9D.png" width="553" class="r-stretch"></section>
-<section id="install-rstudio" class="slide level2">
-<h2>Install RStudio</h2>
-<p>Please install RStudio desktop from: <a href="https://www.rstudio.com/products/rstudio/download/#download">Latest RStudio Desktop</a></p>
-
-<img data-src="images/RStudioWeb-min-01.png" width="528" class="r-stretch"></section></section>
-<section>
-<section id="getting-started-with-rstudio" class="title-slide slide level1 center">
-<h1>Getting Started with RStudio</h1>
-
-</section>
-<section id="clone-ithim-r-repo" class="slide level2">
-<h2>Clone ITHIM-R repo</h2>
-<p>Please clone <a href="https://github.com/ITHIM/ITHIM-R.git" class="uri">https://github.com/ITHIM/ITHIM-R.git</a>(https://github.com/ITHIM/ITHIM-R.git) via RStudio</p>
-<div class="callout callout-note callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="open-the-project" class="slide level2">
-<h2>Open the project</h2>
-<p>Please open the When you click the <strong>Render</strong> button a document will be generated that includes:</p>
-<ul>
-<li class="fragment">Content authored with markdown</li>
-<li class="fragment">Output from executable code</li>
-</ul>
-</section>
-<section id="depended-packages" class="slide level2">
-<h2>Depended packages</h2>
-<p>Before we start building and installing the <strong>ithim-r</strong> package, we need to install two packages. One is the <strong>remotes</strong> package. Please install using:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Once that is done, please install and load the Dose-Response for Physical Activity <strong>drpa</strong> package by:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"meta-analyses/drpa"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(drpa)</span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># install other depended libraries</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"plyr"</span>, <span class="st">"dplyr"</span>, <span class="st">"tidyr"</span>, <span class="st">"readr"</span>, <span class="st">"haven"</span>, <span class="st">"ggplot2"</span>, <span class="st">"plotly"</span>, <span class="st">"ReIns"</span>, <span class="st">"truncnorm"</span>, <span class="st">"distr"</span>, <span class="st">"pracma"</span>, <span class="st">"data.table"</span>, <span class="st">"stringr"</span>, <span class="st">"summarytools"</span>, <span class="st">"gt"</span>, <span class="st">"flextable"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="install-the-package" class="slide level2">
-<h2>Install the package</h2>
-<p>Depending on the Operating System, please build and reload the ithim-r package using keyword shortcuts below:</p>
-
-<img data-src="images/paste-413B3891.png" class="r-stretch"><p>Source: <a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE">Keyboard Shortcuts in the RStudio IDE</a></p>
-</section></section>
-<section>
-<section id="getting-started-with-ithim-r-package" class="title-slide slide level1 center">
-<h1>Getting Started with ITHIM-R package</h1>
-
-</section>
-<section id="package-structure" class="slide level2">
-<h2>Package structure</h2>
-<table>
-<colgroup>
-<col style="width: 22%">
-<col style="width: 77%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Folder</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr class="even">
-<td>inst</td>
-<td>Installation folder which contains local (trips, PA, population, burden and injury datasets) and global (PA and AP dose response relationships as well as disease/cause relationship table)</td>
-</tr>
-<tr class="odd">
-<td>man</td>
-<td>manual folder - description of functions</td>
-</tr>
-<tr class="even">
-<td>R</td>
-<td>source files - R scripts for functions (that are both internally used and are exported through package interface)</td>
-</tr>
-<tr class="odd">
-<td>DESCRIPTION, NAMESPACE, and README.md</td>
-<td>Package meta-data information</td>
-</tr>
-<tr class="even">
-<td>results</td>
-<td>Outputs of the package are stored here. The most important one being <em>ithim_object</em> is stored at: <code>results/multi_city/io.rds</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="data-structure" class="slide level2">
-<h2>Data Structure</h2>
 </section>
 <section id="load-package" class="slide level2">
 <h2>Load package</h2>
-<div class="cell">
+<p>Please make sure that the ithim-r package is installed on your computer: <a href="The%20Comprehensive%20R%20Archive%20Network">https://cran.r-project.org/</a></p>
 
-</div>
-</section>
-<section id="trip-dataset-12" class="slide level2">
-<h2>Trip Dataset (1/2)</h2>
-<p>A single-day travel diary in which each row represents a trip</p>
-<ul>
-<li class="fragment"><p><strong>Individual-level variables</strong></p>
-<ul>
-<li class="fragment"><strong>participant_id</strong>: unique ID for each individual</li>
-<li class="fragment"><strong>age</strong>: participant’s age as an integer</li>
-<li class="fragment"><strong>sex</strong>: male or female</li>
-</ul></li>
-<li class="fragment"><p><strong>Trip-level variables:</strong></p>
-<ul>
-<li class="fragment"><strong>trip_id</strong>: unique ID for each trip made by each individual</li>
-<li class="fragment"><strong>trip_mode</strong>: main mode of the trip</li>
-<li class="fragment"><strong>trip_distance</strong>: total trip distance in kilometers</li>
-</ul></li>
-</ul>
-</section>
-<section id="trip-dataset-22" class="slide level2">
-<h2>Trip dataset (2/2)</h2>
-<ul>
-<li class="fragment"><strong>Stage-level variables:</strong>
-<ul>
-<li class="fragment"><strong>stage_mode</strong>: Mode of the trip stage</li>
-<li class="fragment"><strong>stage_duration</strong>: Duration of each stage in minutes</li>
-</ul></li>
-</ul>
+<img data-src="images/paste-F7C7570F.png" class="r-stretch"><p>or you can try this command:</p>
 <div class="cell">
-<div class="cell-output-display">
-<table>
-<colgroup>
-<col style="width: 6%">
-<col style="width: 8%">
-<col style="width: 11%">
-<col style="width: 8%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 3%">
-<col style="width: 5%">
-<col style="width: 6%">
-<col style="width: 14%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">trip_id</th>
-<th style="text-align: left;">trip_mode</th>
-<th style="text-align: right;">trip_distance</th>
-<th style="text-align: left;">stage_mode</th>
-<th style="text-align: right;">stage_distance</th>
-<th style="text-align: right;">stage_duration</th>
-<th style="text-align: right;">participant_id</th>
-<th style="text-align: right;">age</th>
-<th style="text-align: left;">sex</th>
-<th style="text-align: left;">age_cat</th>
-<th style="text-align: left;">trip_distance_cat</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: right;">0.4166667</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: right;">0.4166667</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">59</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">55-59</td>
-<td style="text-align: left;">0-2km</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: right;">0.4166667</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: right;">0.4166667</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">59</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">55-59</td>
-<td style="text-align: left;">0-2km</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">rail</td>
-<td style="text-align: right;">8.5500000</td>
-<td style="text-align: left;">walk_to_pt</td>
-<td style="text-align: right;">0.4166667</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: left;">6+km</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">rail</td>
-<td style="text-align: right;">8.5500000</td>
-<td style="text-align: left;">walk_to_pt</td>
-<td style="text-align: right;">0.8333333</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: left;">6+km</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">rail</td>
-<td style="text-align: right;">8.5500000</td>
-<td style="text-align: left;">rail</td>
-<td style="text-align: right;">7.3000000</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: left;">6+km</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">rail</td>
-<td style="text-align: right;">10.6250000</td>
-<td style="text-align: left;">walk_to_pt</td>
-<td style="text-align: right;">0.8333333</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: left;">6+km</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(ithimr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="road-traffic-injury-rti-dataset" class="slide level2">
-<h2>Road Traffic Injury (RTI) Dataset</h2>
-<p>This dataset comes from police records. We are only looking at fatalities and ignore injuries in our model. It is usually in a matrix form with rows representing strike mode, and column representing casualty mode. However sometimes you have multiple years of annual data - that needs to be weighted, and with additional info such as casualty age and gender. We are using long format taking into account as much data as possible.</p>
-<ul>
-<li class="fragment"><p><strong>Injury data</strong></p>
-<ul>
-<li class="fragment"><strong>event_id</strong>: unique ID (integer) for the incidence</li>
-<li class="fragment"><strong>year</strong>: collection year - could have multiple years data</li>
-<li class="fragment"><strong>cas_gender</strong>: male or female (gender of the victim)</li>
-<li class="fragment"><strong>cas_age</strong>: victim’s age</li>
-<li class="fragment"><strong>cas_mode</strong>: transport mode of the victim</li>
-<li class="fragment"><strong>strike_mode:</strong> transport mode of the striker</li>
-</ul></li>
-</ul>
+<section id="select-case-study" class="slide level2">
+<h2>Select case study</h2>
+<p>Open <code>multi_city_script.R</code> from the files section, and make sure that the <code>sao_paulo</code> is selected in the <code>cities</code> variable. Also please make sure the city and global parameters are set to be read and loaded, like this:</p>
 <div class="cell">
-<div class="cell-output-display">
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: right;">event_id</th>
-<th style="text-align: right;">year</th>
-<th style="text-align: left;">cas_gender</th>
-<th style="text-align: right;">cas_age</th>
-<th style="text-align: left;">cas_mode</th>
-<th style="text-align: left;">strike_mode</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1397</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">52</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: left;">motorcycle</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3097</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: left;">car</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3098</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: left;">Female</td>
-<td style="text-align: right;">50</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: left;">bus</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3099</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">85</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: left;">car</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3100</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: left;">car</td>
-<td style="text-align: left;">NOV</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3104</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: left;">motorcycle</td>
-<td style="text-align: left;">car</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Specify list of cities. We are only using SP for now.</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>cities <span class="ot">&lt;-</span> <span class="st">'sao_paulo'</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># Specify parameters file for SP specific and global vars</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>input_parameter_file <span class="ot">&lt;-</span> <span class="st">"InputParameters_v18.0.xlsx"</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="co"># Read in all params through this script</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">source</span>(<span class="st">"helpful_scripts/load_input_params.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</section>
-<section id="physical-activity-pa-dataset" class="slide level2">
-<h2>Physical Activity (PA) Dataset</h2>
-<p>This dataset generally comes from a PA travel survey - which is processed. It has information of weekly Leisure Time PA for each of the participant.</p>
-<ul>
-<li class="fragment"><p><strong>PA survey</strong></p>
-<ul>
-<li class="fragment"><strong>participant_id</strong>: unique person ID (integer)</li>
-<li class="fragment"><strong>age</strong>: numeric age</li>
-<li class="fragment"><strong>sex</strong>: male or female</li>
-<li class="fragment"><strong>ltpa_marg_met:</strong> leisure-time (non-transport) physical activity in marginal metabolic equivalent task hours (mMET-hrs) per week</li>
-</ul></li>
-</ul>
-<div class="cell-output-display">
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: right;">participant_id</th>
-<th style="text-align: right;">age</th>
-<th style="text-align: left;">sex</th>
-<th style="text-align: left;">age_cat</th>
-<th style="text-align: right;">ltpa_marg_met</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">59</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">55-59</td>
-<td style="text-align: right;">12.25</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: right;">0.00</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">37</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">35-39</td>
-<td style="text-align: right;">0.00</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: right;">5.83</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: right;">0.00</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">43</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">40-44</td>
-<td style="text-align: right;">5.83</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="burden-of-disease-bod-dataset-12" class="slide level2">
-<h2>Burden of Disease (BoD) dataset (1/2)</h2>
-<p>Cause specific disease burden data from Institute for Health Metrics and Evaluation <strong>IHME’s</strong> global burden of disease database (<a href="https://ghdx.healthdata.org/gbd-2019" class="uri">https://ghdx.healthdata.org/gbd-2019</a>)</p>
-<ul>
-<li class="fragment"><p><strong>Burden data</strong></p>
-<ul>
-<li class="fragment"><strong>measure</strong>: Deaths or Years of Life Lost (YLLs)</li>
-<li class="fragment"><strong>age</strong>: age group - usually a five year band as integer</li>
-<li class="fragment"><strong>cause</strong>: cause/disease (<em>details later on</em>)</li>
-<li class="fragment"><strong>population</strong>: population size</li>
-<li class="fragment"><strong>mix_age</strong>: minimum age in integer for the current age group</li>
-<li class="fragment"><strong>max_age</strong>: maximum age in integer for the current age group</li>
-<li class="fragment"><strong>rate</strong>: rate of risk of measure</li>
-<li class="fragment"><strong>burden</strong>: burden of the measure</li>
-</ul></li>
-</ul>
-</section>
-<section id="burden-of-disease-bod-dataset-22" class="slide level2">
-<h2>Burden of Disease (BoD) dataset (2/2)</h2>
-<div class="cell-output-display">
-<table>
-<colgroup>
-<col style="width: 26%">
-<col style="width: 7%">
-<col style="width: 6%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 10%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">measure</th>
-<th style="text-align: left;">sex</th>
-<th style="text-align: left;">age</th>
-<th style="text-align: left;">cause</th>
-<th style="text-align: right;">population</th>
-<th style="text-align: right;">min_age</th>
-<th style="text-align: right;">max_age</th>
-<th style="text-align: right;">rate</th>
-<th style="text-align: right;">burden</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Deaths</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: left;">All causes</td>
-<td style="text-align: right;">421705</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">0.0003508</td>
-<td style="text-align: right;">147.9347</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">YLLs (Years of Life Lost)</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: left;">All causes</td>
-<td style="text-align: right;">421705</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">0.0250641</td>
-<td style="text-align: right;">10569.6710</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Deaths</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: left;">All causes</td>
-<td style="text-align: right;">420552</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">0.0012150</td>
-<td style="text-align: right;">510.9531</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">YLLs (Years of Life Lost)</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: left;">All causes</td>
-<td style="text-align: right;">420552</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">0.0866981</td>
-<td style="text-align: right;">36461.0748</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Deaths</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: left;">All causes</td>
-<td style="text-align: right;">502227</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">24</td>
-<td style="text-align: right;">0.0004476</td>
-<td style="text-align: right;">224.7849</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">YLLs (Years of Life Lost)</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: left;">All causes</td>
-<td style="text-align: right;">502227</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">24</td>
-<td style="text-align: right;">0.0297947</td>
-<td style="text-align: right;">14963.6918</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="population-dataset" class="slide level2">
-<h2>Population Dataset</h2>
-<p>The demographic information is by age and gender. This also comes from <strong>IHME’s</strong> global burden of disease database (<a href="https://ghdx.healthdata.org/gbd-2019" class="uri">https://ghdx.healthdata.org/gbd-2019</a>)</p>
-<ul>
-<li class="fragment"><p><strong>Population</strong></p>
-<ul>
-<li class="fragment"><strong>sex</strong>: male or female</li>
-<li class="fragment"><strong>age</strong>: age group - usually a five year band as integer</li>
-<li class="fragment"><strong>population</strong>: population size</li>
-</ul></li>
-</ul>
-<div class="cell-output-display">
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">sex</th>
-<th style="text-align: left;">age</th>
-<th style="text-align: right;">population</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: right;">421705</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: right;">502227</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">25-29</td>
-<td style="text-align: right;">554888</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">30-34</td>
-<td style="text-align: right;">528818</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">35-39</td>
-<td style="text-align: right;">465661</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">40-44</td>
-<td style="text-align: right;">427807</td>
-</tr>
-</tbody>
-</table>
-</div>
+</section></section>
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
 
 <img src="https://www.mrc-epid.cam.ac.uk/wp-content/uploads/2021/10/colour-epi-logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="overview_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="implementation_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="overview_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="overview_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="overview_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="overview_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="overview_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="implementation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="implementation_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="implementation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="implementation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="implementation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="overview_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="overview_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="overview_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="overview_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="implementation_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="implementation_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="implementation_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="implementation_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

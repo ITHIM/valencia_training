@@ -1,0 +1,50 @@
+---
+title: "Implementation of ITHIM-R to Sao Paulo city"
+author: "Ali Abbas"
+format: 
+  revealjs:
+    slide-number: true
+    incremental: true
+    width: 1920
+    height: 1080
+    logo: "https://www.mrc-epid.cam.ac.uk/wp-content/uploads/2021/10/colour-epi-logo.png"
+    #footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
+    css: ["theme/theme.css"]
+    theme: simple
+editor: visual
+execute: 
+  echo: true
+  eval: false
+  size: "huge"
+---
+
+# Application of ITHIM-R
+
+## Load package 
+
+Please make sure that the ithim-r package is installed on your computer: [https://cran.r-project.org/](The%20Comprehensive%20R%20Archive%20Network)
+
+![](images/paste-F7C7570F.png)
+
+or you can try this command:
+
+```{r}
+library(ithimr)
+```
+
+## Select case study
+
+Open `multi_city_script.R` from the files section, and make sure that the `sao_paulo` is selected in the `cities` variable. Also please make sure the city and global parameters are set to be read and loaded, like this:
+
+```{r}
+# Specify list of cities. We are only using SP for now.
+cities <- 'sao_paulo'
+
+# Specify parameters file for SP specific and global vars
+input_parameter_file <- "InputParameters_v18.0.xlsx"
+
+# Read in all params through this script
+source("helpful_scripts/load_input_params.R")
+```
+
+# 

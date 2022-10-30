@@ -11,6 +11,8 @@ format:
     #footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
     css: ["theme/theme.css"]
     theme: simple
+  html:
+    code-copy: false
 editor: visual
 execute: 
   echo: true
@@ -63,6 +65,9 @@ Once that is done, please install and load the Dose-Response for Physical Activi
 #| eval: false
 remotes::install_github("meta-analyses/drpa")
 library(drpa)
+
+# install other depended libraries
+install.packages(c("plyr", "dplyr", "tidyr", "readr", "haven", "ggplot2", "plotly", "ReIns", "truncnorm", "distr", "pracma", "data.table", "stringr", "summarytools", "gt", "flextable"))
 ```
 
 ## Install the package
@@ -78,7 +83,7 @@ Source: [Keyboard Shortcuts in the RStudio IDE](https://support.rstudio.com/hc/e
 ## Package structure
 
 |                                       |                                                                                                                                                                                             |
-|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|----------------|--------------------------------------------------------|
 | **Folder**                            | **Description**                                                                                                                                                                             |
 | inst                                  | Installation folder which contains local (trips, PA, population, burden and injury datasets) and global (PA and AP dose response relationships as well as disease/cause relationship table) |
 | man                                   | manual folder - description of functions                                                                                                                                                    |
@@ -99,7 +104,7 @@ library(tidyverse)
 
 io <- readRDS("../results/multi_city/io.rds")
 
-city <- 'antofagasta'
+city <- 'sao_paulo'
 
 ```
 
@@ -139,7 +144,8 @@ This dataset comes from police records. We are only looking at fatalities and ig
 
     -   **event_id**: unique ID (integer) for the incidence
     -   **year**: collection year - could have multiple years data
-    -   **cas_age**: male or female (gender of the victim)
+    -   **cas_gender**: male or female (gender of the victim)
+    -   **cas_age**: victim's age
     -   **cas_mode**: transport mode of the victim
     -   **strike_mode:** transport mode of the striker
 
@@ -148,9 +154,9 @@ This dataset comes from police records. We are only looking at fatalities and ig
 
 PATH_TO_LOCAL_DATA <<- file.path(find.package('ithimr',lib.loc=.libPaths()), 'extdata/local',city)
 filename <- paste0(PATH_TO_LOCAL_DATA, "/injuries_", city, ".csv")
-injuries <- read_csv(filename, col_types = cols())
+injuries <- readr::read_csv(filename, col_types = cols())
 
-knitr::kable(injuries |> dplyr::select(-ends_with("original")) |> arrange(event_id) |> head())
+knitr::kable(injuries |> rename(event_id = X1) |> dplyr::select(event_id, year, cas_gender, cas_age, cas_mode, strike_mode) |> head())
 
 ```
 
@@ -179,11 +185,11 @@ Cause specific disease burden data from Institute for Health Metrics and Evaluat
     -   **measure**: Deaths or Years of Life Lost (YLLs)
     -   **age**: age group - usually a five year band as integer
     -   **cause**: cause/disease (*details later on*)
-    -   **population**: population size
-    -   **mix_age**: minimum age in integer for the current age group
-    -   **max_age**: maximum age in integer for the current age group
-    -   **rate**: rate of risk of measure
-    -   **burden**: burden of the measure
+    -   **population**: population size by age and gender group
+    -   **mix_age**: minimum age in integer for the current age and gender group
+    -   **max_age**: maximum age in integer for the current age and gender group
+    -   **rate**: rate of risk of measure per person
+    -   **burden**: burden of the measure for the *population*
 
 ## Burden of Disease (BoD) dataset (2/2)
 
