@@ -1,0 +1,208 @@
+---
+title: "Overview of ITHIM-R"
+author: "Ali Abbas"
+format: 
+  revealjs:
+    slide-number: true
+    incremental: true
+    width: 1920
+    height: 1080
+    logo: "https://www.mrc-epid.cam.ac.uk/wp-content/uploads/2021/10/colour-epi-logo.png"
+    #footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
+    css: ["theme/theme.css"]
+    theme: simple
+editor: visual
+execute: 
+  echo: true
+  size: "huge"
+---
+
+# Getting Started with Required Software
+
+## Install R
+
+Please install R (version: R-4.2.1) from: [https://cran.r-project.org/](The%20Comprehensive%20R%20Archive%20Network)
+
+![](images/paste-51CD4F9D.png){width="553"}
+
+## Install RStudio
+
+Please install RStudio desktop from: [Latest RStudio Desktop](https://www.rstudio.com/products/rstudio/download/#download)
+
+![](images/RStudioWeb-min-01.png){width="528"}
+
+# Getting Started with RStudio
+
+## Clone ITHIM-R repo
+
+Please clone <https://github.com/ITHIM/ITHIM-R.git>(https://github.com/ITHIM/ITHIM-R.git) via RStudio
+
+::: callout-note
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+:::
+
+## Open the project
+
+Please open the When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Depended packages
+
+Before we start building and installing the **ithim-r** package, we need to install two packages. One is the **remotes** package. Please install using:
+
+```{r, size="large"}
+#| eval: false
+install.packages("remotes")
+```
+
+Once that is done, please install and load the Dose-Response for Physical Activity **drpa** package by:
+
+```{r, size="large"}
+#| eval: false
+remotes::install_github("meta-analyses/drpa")
+library(drpa)
+```
+
+## Install the package
+
+Depending on the Operating System, please build and reload the ithim-r package using keyword shortcuts below:
+
+![](images/paste-413B3891.png)
+
+Source: [Keyboard Shortcuts in the RStudio IDE](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE)
+
+# Getting Started with ITHIM-R package
+
+## Package structure
+
+|                                       |                                                                                                                                                                                             |
+|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Folder**                            | **Description**                                                                                                                                                                             |
+| inst                                  | Installation folder which contains local (trips, PA, population, burden and injury datasets) and global (PA and AP dose response relationships as well as disease/cause relationship table) |
+| man                                   | manual folder - description of functions                                                                                                                                                    |
+| R                                     | source files - R scripts for functions (that are both internally used and are exported through package interface)                                                                           |
+| DESCRIPTION, NAMESPACE, and README.md | Package meta-data information                                                                                                                                                               |
+| results                               | Outputs of the package are stored here. The most important one being *ithim_object* is stored at: `results/multi_city/io.rds`                                                               |
+
+## Data Structure
+
+## Load package
+
+```{r}
+#| echo: false
+# Load the package
+library(ithimr)
+# and other useful ones
+library(tidyverse)
+
+io <- readRDS("../results/multi_city/io.rds")
+
+city <- 'antofagasta'
+
+```
+
+## Trip Dataset (1/2)
+
+A single-day travel diary in which each row represents a trip
+
+-   **Individual-level variables**
+
+    -   **participant_id**: unique ID for each individual
+    -   **age**: participant's age as an integer
+    -   **sex**: male or female
+
+-   **Trip-level variables:**
+
+    -   **trip_id**: unique ID for each trip made by each individual
+    -   **trip_mode**: main mode of the trip
+    -   **trip_distance**: total trip distance in kilometers
+
+## Trip dataset (2/2)
+
+-   **Stage-level variables:**
+    -   **stage_mode**: Mode of the trip stage
+    -   **stage_duration**: Duration of each stage in minutes
+
+```{r}
+#| echo: false
+io[[city]]$trip_scen_sets |> filter(scenario == "Baseline") |> dplyr::select(-scenario) |> arrange(trip_id) |> head() |> knitr::kable()
+
+```
+
+## Road Traffic Injury (RTI) Dataset
+
+This dataset comes from police records. We are only looking at fatalities and ignore injuries in our model. It is usually in a matrix form with rows representing strike mode, and column representing casualty mode. However sometimes you have multiple years of annual data - that needs to be weighted, and with additional info such as casualty age and gender. We are using long format taking into account as much data as possible.
+
+-   **Injury data**
+
+    -   **event_id**: unique ID (integer) for the incidence
+    -   **year**: collection year - could have multiple years data
+    -   **cas_age**: male or female (gender of the victim)
+    -   **cas_mode**: transport mode of the victim
+    -   **strike_mode:** transport mode of the striker
+
+```{r}
+#| echo: false
+
+PATH_TO_LOCAL_DATA <<- file.path(find.package('ithimr',lib.loc=.libPaths()), 'extdata/local',city)
+filename <- paste0(PATH_TO_LOCAL_DATA, "/injuries_", city, ".csv")
+injuries <- read_csv(filename, col_types = cols())
+
+knitr::kable(injuries |> dplyr::select(-ends_with("original")) |> arrange(event_id) |> head())
+
+```
+
+## Physical Activity (PA) Dataset
+
+This dataset generally comes from a PA travel survey - which is processed. It has information of weekly Leisure Time PA for each of the participant.
+
+-   **PA survey**
+
+    -   **participant_id**: unique person ID (integer)
+    -   **age**: numeric age
+    -   **sex**: male or female
+    -   **ltpa_marg_met:** leisure-time (non-transport) physical activity in marginal metabolic equivalent task hours (mMET-hrs) per week
+
+```{r, results='asis'}
+#| echo: false
+knitr::kable(io[[city]]$synth_pop |> rename(ltpa_marg_met = work_ltpa_marg_met) |> arrange(participant_id) |> head())
+```
+
+## Burden of Disease (BoD) dataset (1/2)
+
+Cause specific disease burden data from Institute for Health Metrics and Evaluation **IHME's** global burden of disease database (<https://ghdx.healthdata.org/gbd-2019>)
+
+-   **Burden data**
+
+    -   **measure**: Deaths or Years of Life Lost (YLLs)
+    -   **age**: age group - usually a five year band as integer
+    -   **cause**: cause/disease (*details later on*)
+    -   **population**: population size
+    -   **mix_age**: minimum age in integer for the current age group
+    -   **max_age**: maximum age in integer for the current age group
+    -   **rate**: rate of risk of measure
+    -   **burden**: burden of the measure
+
+## Burden of Disease (BoD) dataset (2/2)
+
+```{r, results='asis'}
+#| echo: false
+knitr::kable(io[[city]]$disease_burden |> head())
+```
+
+## Population Dataset
+
+The demographic information is by age and gender. This also comes from **IHME's** global burden of disease database (<https://ghdx.healthdata.org/gbd-2019>)
+
+-   **Population**
+
+    -   **sex**: male or female
+    -   **age**: age group - usually a five year band as integer
+    -   **population**: population size
+
+```{r, results='asis'}
+#| echo: false
+knitr::kable(io[[city]]$demographic |> head())
+```
