@@ -74,18 +74,15 @@ add_walk_trips <- function(pt_trips){
   
   walk_trips <- walk_trips %>% dplyr::select(-c(stage_distance_new, stage_duration_new, stage_mode_new))
   
-  
-  
   # merge two datasets to calculate total trip distance by summing across the various stage distances
   all_trips <- rbind(pt_trips, walk_trips)
   
-  trip_dist <- all_trips %>% group_by(trip_id) %>% summarise(trip_distance_new = sum(stage_distance))
+  trip_dist <- all_trips %>% group_by(trip_id) %>% mutate(trip_distance_new = sum(stage_distance))
   
-  all_trips <- full_join(all_trips, trip_dist, by = 'trip_id')
+  all_trips <- full_join(all_trips, trip_dist |> dplyr::select(trip_distance_new), by = 'trip_id')
   
   all_trips$trip_distance <- all_trips$trip_distance_new
   all_trips <- all_trips %>% dplyr::select(-c(trip_distance_new))
-  
   
   # Recategorise trip_distance_cat for both bus and walk trips
   all_trips$trip_distance_cat[all_trips$trip_distance > 0 & all_trips$trip_distance < DIST_LOWER_BOUNDS[2]] <- DIST_CAT[1]
