@@ -1,5 +1,5 @@
 ---
-title: "ITHIM Training Session"
+title: "Integrated Transport and Health Impact Model (ITHIM) Training Session"
 author: "Ali Abbas"
 format:
   html:
@@ -19,21 +19,27 @@ crossref:
 editor: visual
 ---
 
-# Integrated Transport and Health Impact Model - ITHIM
-
-Introduction, training, and expertise
+## **Introduction, training, and application** {.unnumbered}
 
 **Venue**: Valencia NH Centre, Calle Ricardo Micó 1 -- 46009 Valencia Meeting room: Gregal, Classroom style
 
-Tuesday, Nov. 1st, 9 AM -- 5 PM
+Tuesday, Nov. 1st, 9 AM to 5 PM
 
-## **Overview and objectives:**
+## **Overview and objectives:** {.unnumbered}
 
-Bringing together partners of the JIBE project (expert and stakeholders in urban transportation planning), this training session will showcase how high-resolution modeling of transportation impacts on health (road traffic injuries, air pollution, physical activity) can facilitate city and regional policymaking. Our goal is to open up new opportunities for transportation planning, with an aim to embed road traffic injuries, physical activity, air quality and health benefits in shaping real-world policy decisions by:
+Bringing together partners of the JIBE project (expert and stakeholders in urban transportation planning), this training session will showcase how high-resolution modeling of transportation impacts on health through three pathways: road traffic injuries, air pollution, and physical activity, can facilitate city and regional policymaking. Our goal is to open up new opportunities for transportation planning. The aim is to embed the assessment of road traffic injuries, physical activity, air quality and their health impacts in shaping real-world policy decisions by:
 
-1.  *Understanding travel behaviors, by getting the appropriate data (demographics, Road Traffic Injuries (RTI), Physical Activity (PA) and Air Pollution (AP) exposure) and then developing policy inspired what-if-scenarios.*
-2.  *Quantifying health impact of travel on health, by capturing changes in Physical Activity (PA), Air Pollution (AP) and Road Traffic Injuries exposures.*
-3.  *Learning objectives: install/manage an R package, skills to use RStudio, Exploratory Data Analysis, health impact assessment, dose-response relationships of both Physical Activity (PA) and Air Pollution (AP) and causes/diseases; also a deeper understanding of these exposures by looking at their impacts on health, and learning/managing pivot tables for result analysis using MS excel.*
+1.  *Understanding travel behaviors*
+2.  *Developing policy inspired what-if scenarios by getting the appropriate data (demographics, Road Traffic Injuries (RTI), Physical Activity (PA) and Air Pollution (AP) exposure).*
+3.  *Quantifying health impact of travel on health, by capturing changes in Physical Activity (PA), Air Pollution (AP) and Road Traffic Injuries exposures.*
+
+## **Learning objectives:** {.unnumbered}
+
+-   *Overview of the theoretical underpinning of ITHIM-R including the traffic injuries, physical activity and air pollution modules Install/manage the ITHIM-R package, running the model, and navigating the package in RStudio*
+-   *Conducting Exploratory Data Analysis of model (input data and results) and visualization of health outcomes and injury risks.*
+-   *Conducting health impact assessments of alternative scenarios using ITHIM-R*
+-   *Overview dose-response relationships of both Physical Activity (PA) and Air Pollution (AP) and causes/disease specific mortalities*
+-   *Learning/managing pivot tables for result analysis using MS excel.*
 
 # **Work session 1: Introduction to Integrated Travel and Health Impact Model (ITHIM)**
 
