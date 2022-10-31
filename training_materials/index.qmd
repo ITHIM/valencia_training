@@ -41,6 +41,18 @@ Bringing together partners of the JIBE project (expert and stakeholders in urban
 -   *Overview dose-response relationships of both Physical Activity (PA) and Air Pollution (AP) and causes/disease specific mortalities*
 -   *Learning/managing pivot tables for result analysis using MS excel.*
 
+| Timings              | Sessions                                                          |
+|----------------------|-------------------------------------------------------------------|
+| 9 AM --10.30 AM      | Session 1: Introduction to ITHIM                                  |
+| 10.30 AM -- 11.00 AM | Tea break                                                         |
+| 11 AM --12.30 PM     | Session 2: Application of ITHIM                                   |
+| 12.30 PM - 1.30 PM   | Lunch break                                                       |
+| 1.30 PM -- 3 PM      | Session 3: Training and exercises                                 |
+| 3 PM - 3.30 PM       | Break                                                             |
+| 3.30 PM - 5 PM       | Session 4: Dose-response of Physical Activity and causes/diseases |
+
+: Schedule
+
 # **Work session 1: Introduction to Integrated Travel and Health Impact Model (ITHIM)**
 
 **Host** : James, Ali, Haneen and Lambed

@@ -8,7 +8,7 @@ format:
     width: 1920
     height: 1080
     logo: "https://www.mrc-epid.cam.ac.uk/wp-content/uploads/2021/10/colour-epi-logo.png"
-    #footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
+    #footer: "[ITHIM](https://ithim.github.io/valencia_training/training_materials//)"
     css: ["theme/theme.css"]
     theme: simple
 editor: visual
@@ -20,7 +20,7 @@ execute:
 
 # Application of ITHIM-R
 
-## Load package 
+## Load package
 
 Please make sure that the ithim-r package is installed on your computer: [https://cran.r-project.org/](The%20Comprehensive%20R%20Archive%20Network)
 
@@ -34,9 +34,10 @@ library(ithimr)
 
 ## Select case study
 
-Open `multi_city_script.R` from the files section, and make sure that the `sao_paulo` is selected in the `cities` variable. Also please make sure the city and global parameters are set to be read and loaded, like this:
+Open `multi_city_script.R` from the files section, and please make sure that the `sao_paulo` is selected in the `cities` variable. Also please make sure the city and global parameters are set to be read and loaded, like this:
 
 ```{r}
+#| echo: true
 # Specify list of cities. We are only using SP for now.
 cities <- 'sao_paulo'
 
@@ -44,7 +45,45 @@ cities <- 'sao_paulo'
 input_parameter_file <- "InputParameters_v18.0.xlsx"
 
 # Read in all params through this script
-source("helpful_scripts/load_input_params.R")
+#source("helpful_scripts/load_input_params.R")
 ```
 
-# 
+# What-if Scenarios
+
+We created four scenarios where each mode is increased by `5%`. The four scenarios are: cycle, car, bus and motorcycle scenarios where in each case, we increase their share of trips by `5%` each. Table below shows `trip proportion` for `Sao Paulo`.
+
+| Travel mode | BASELINE | Cycle Scenario | Car Scenario | Bus Scenario | Motorcycle Scenario |
+|------------|------------|------------|------------|------------|------------|
+| car         | *33.0*   | 31.2           | **38.0**     | 28.8         | 31.0                |
+| motorcycle  | *2.3*    | 2.2            | 2.1          | 2.0          | **7.3**             |
+| bus         | *18.6*   | 17.5           | 16.2         | **23.6**     | 17.3                |
+| cycle       | *1.0*    | **6.0**        | 0.9          | 0.9          | 1.0                 |
+
+# Cause/disease Table
+
+Table of the considered causes/diseases. `1` in the cell below represents whether the cause/disease has an effect on the pathway. If there is `1` on both `PA` and `AP` pathways, we multiply their `Relative Risks` to capture the interaction.
+
+| GBD_name                                | air_pollution | physical_activity |
+|-------------------------------------|-----------------|------------------|
+| All causes                              | 1             | 1                 |
+| Ischemic heart disease                  | 1             | 1                 |
+| Neoplasms                               | 0             | 1                 |
+| Tracheal, bronchus, and lung cancer     | 1             | 1                 |
+| Chronic obstructive pulmonary disease   | 1             | 0                 |
+| Stroke                                  | 1             | 1                 |
+| Diabetes mellitus type 2                | 1             | 1                 |
+| Lower respiratory infections            | 1             | 0                 |
+| Breast cancer                           | 0             | 1                 |
+| Colon and rectum cancer                 | 0             | 1                 |
+| Uterine cancer                          | 0             | 1                 |
+| Liver cancer                            | 0             | 1                 |
+| Cardiovascular diseases                 | 1             | 1                 |
+| Alzheimer's disease and other dementias | 0             | 1                 |
+| Myeloma                                 | 0             | 1                 |
+| Parkinson's disease                     | 0             | 1                 |
+
+# Cause/disease level
+
+We are operating at three difference levels of causes/diseases:
+
+![](images/paste-5F7B6997.png){width="772" height="349"}

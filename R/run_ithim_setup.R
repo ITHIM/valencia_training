@@ -430,7 +430,6 @@ run_ithim_setup <- function(seed = 1,
   ## complete TRIP_SET to contain distances and durations for trips and stages
   complete_trip_distance_duration() 
   if(!RECALCULATE_PM_EMISSION_INVENTORY & !RECALCULATE_CO2_EMISSION_INVENTORY) set_vehicle_inventory() # sets vehicle inventory
-  
   ## create inventory and edit trips, if they are not variable dependent
   if(!RECALCULATE_TRIPS){
     ithim_object$trip_scen_sets <- get_synthetic_from_trips() # sets synthetic trips and synthetic population

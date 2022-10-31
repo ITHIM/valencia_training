@@ -395,6 +395,9 @@
 </section>
 <section id="install-r" class="slide level2">
 <h2>Install R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">class.source =</span> <span class="st">"watch-out"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Please install R (version: R-4.2.1) from: <a href="The%20Comprehensive%20R%20Archive%20Network">https://cran.r-project.org/</a></p>
 
 <img data-src="images/paste-51CD4F9D.png" width="553" class="r-stretch"></section>
@@ -410,42 +413,24 @@
 </section>
 <section id="clone-ithim-r-repo" class="slide level2">
 <h2>Clone ITHIM-R repo</h2>
-<p>Please clone <a href="https://github.com/ITHIM/ITHIM-R.git" class="uri">https://github.com/ITHIM/ITHIM-R.git</a>(https://github.com/ITHIM/ITHIM-R.git) via RStudio</p>
-<div class="callout callout-note callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="open-the-project" class="slide level2">
-<h2>Open the project</h2>
-<p>Please open the When you click the <strong>Render</strong> button a document will be generated that includes:</p>
-<ul>
-<li class="fragment">Content authored with markdown</li>
-<li class="fragment">Output from executable code</li>
-</ul>
-</section>
+<p>Please clone <a href="https://github.com/ITHIM/valencia_training" class="uri">https://github.com/ITHIM/valencia_training</a> via RStudio</p>
+
+<img data-src="images/Screenshot%202022-10-31%20at%2021-58-58%20GitHub%20-%20ITHIM_valencia_training.png" class="r-stretch"></section>
 <section id="depended-packages" class="slide level2">
 <h2>Depended packages</h2>
 <p>Before we start building and installing the <strong>ithim-r</strong> package, we need to install two packages. One is the <strong>remotes</strong> package. Please install using:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r watch-out number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Once that is done, please install and load the Dose-Response for Physical Activity <strong>drpa</strong> package by:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"meta-analyses/drpa"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(drpa)</span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># install other depended libraries</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"plyr"</span>, <span class="st">"dplyr"</span>, <span class="st">"tidyr"</span>, <span class="st">"readr"</span>, <span class="st">"haven"</span>, <span class="st">"ggplot2"</span>, <span class="st">"plotly"</span>, <span class="st">"ReIns"</span>, <span class="st">"truncnorm"</span>, <span class="st">"distr"</span>, <span class="st">"pracma"</span>, <span class="st">"data.table"</span>, <span class="st">"stringr"</span>, <span class="st">"summarytools"</span>, <span class="st">"gt"</span>, <span class="st">"flextable"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r watch-out number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"meta-analyses/drpa"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(drpa)</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># install other depended libraries</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"plyr"</span>, <span class="st">"dplyr"</span>, <span class="st">"tidyr"</span>, <span class="st">"readr"</span>, <span class="st">"haven"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6"></a>                   <span class="st">"ggplot2"</span>, <span class="st">"plotly"</span>, <span class="st">"ReIns"</span>, <span class="st">"truncnorm"</span>, <span class="st">"distr"</span>, <span class="st">"pracma"</span>, <span class="st">"data.table"</span>, <span class="st">"stringr"</span>, <span class="st">"summarytools"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7"></a>                   <span class="st">"gt"</span>, <span class="st">"flextable"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="install-the-package" class="slide level2">
@@ -493,12 +478,6 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="data-structure" class="slide level2">
-<h2>Data Structure</h2>
-</section>
-<section id="load-package" class="slide level2">
-<h2>Load package</h2>
 <div class="cell">
 
 </div>
@@ -532,116 +511,91 @@
 </ul>
 <div class="cell">
 <div class="cell-output-display">
+
 <table>
-<colgroup>
-<col style="width: 6%">
-<col style="width: 8%">
-<col style="width: 11%">
-<col style="width: 8%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 3%">
-<col style="width: 5%">
-<col style="width: 6%">
-<col style="width: 14%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">trip_id</th>
-<th style="text-align: left;">trip_mode</th>
-<th style="text-align: right;">trip_distance</th>
-<th style="text-align: left;">stage_mode</th>
-<th style="text-align: right;">stage_distance</th>
-<th style="text-align: right;">stage_duration</th>
-<th style="text-align: right;">participant_id</th>
-<th style="text-align: right;">age</th>
-<th style="text-align: left;">sex</th>
-<th style="text-align: left;">age_cat</th>
-<th style="text-align: left;">trip_distance_cat</th>
-</tr>
-</thead>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> trip_id </th>
+   <th style="text-align:left;"> trip_mode </th>
+   <th style="text-align:right;"> trip_distance </th>
+   <th style="text-align:left;"> stage_mode </th>
+   <th style="text-align:right;"> stage_distance </th>
+   <th style="text-align:right;"> stage_duration </th>
+   <th style="text-align:right;"> participant_id </th>
+   <th style="text-align:right;"> age </th>
+   <th style="text-align:left;"> sex </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: right;">0.4166667</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: right;">0.4166667</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">59</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">55-59</td>
-<td style="text-align: left;">0-2km</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: right;">0.4166667</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: right;">0.4166667</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">59</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">55-59</td>
-<td style="text-align: left;">0-2km</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">rail</td>
-<td style="text-align: right;">8.5500000</td>
-<td style="text-align: left;">walk_to_pt</td>
-<td style="text-align: right;">0.4166667</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: left;">6+km</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">rail</td>
-<td style="text-align: right;">8.5500000</td>
-<td style="text-align: left;">walk_to_pt</td>
-<td style="text-align: right;">0.8333333</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: left;">6+km</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">rail</td>
-<td style="text-align: right;">8.5500000</td>
-<td style="text-align: left;">rail</td>
-<td style="text-align: right;">7.3000000</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: left;">6+km</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">rail</td>
-<td style="text-align: right;">10.6250000</td>
-<td style="text-align: left;">walk_to_pt</td>
-<td style="text-align: right;">0.8333333</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: left;">6+km</td>
-</tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> pedestrian </td>
+   <td style="text-align:right;"> 0.4166667 </td>
+   <td style="text-align:left;"> pedestrian </td>
+   <td style="text-align:right;"> 0.4166667 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 59 </td>
+   <td style="text-align:left;"> female </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> pedestrian </td>
+   <td style="text-align:right;"> 0.4166667 </td>
+   <td style="text-align:left;"> pedestrian </td>
+   <td style="text-align:right;"> 0.4166667 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 59 </td>
+   <td style="text-align:left;"> female </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> rail </td>
+   <td style="text-align:right;"> 8.5500000 </td>
+   <td style="text-align:left;"> walk_to_pt </td>
+   <td style="text-align:right;"> 0.4166667 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:left;"> female </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> rail </td>
+   <td style="text-align:right;"> 8.5500000 </td>
+   <td style="text-align:left;"> walk_to_pt </td>
+   <td style="text-align:right;"> 0.8333333 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:left;"> female </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> rail </td>
+   <td style="text-align:right;"> 8.5500000 </td>
+   <td style="text-align:left;"> rail </td>
+   <td style="text-align:right;"> 7.3000000 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:left;"> female </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> rail </td>
+   <td style="text-align:right;"> 10.6250000 </td>
+   <td style="text-align:left;"> walk_to_pt </td>
+   <td style="text-align:right;"> 0.8333333 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:left;"> female </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
 </div>
 </section>
@@ -661,68 +615,70 @@
 </ul>
 <div class="cell">
 <div class="cell-output-display">
+
 <table>
-<thead>
-<tr class="header">
-<th style="text-align: right;">event_id</th>
-<th style="text-align: right;">year</th>
-<th style="text-align: left;">cas_gender</th>
-<th style="text-align: right;">cas_age</th>
-<th style="text-align: left;">cas_mode</th>
-<th style="text-align: left;">strike_mode</th>
-</tr>
-</thead>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> event_id </th>
+   <th style="text-align:right;"> year </th>
+   <th style="text-align:left;"> cas_gender </th>
+   <th style="text-align:right;"> cas_age </th>
+   <th style="text-align:left;"> cas_mode </th>
+   <th style="text-align:left;"> strike_mode </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: right;">1397</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">52</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: left;">motorcycle</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3097</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: left;">car</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3098</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: left;">Female</td>
-<td style="text-align: right;">50</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: left;">bus</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3099</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">85</td>
-<td style="text-align: left;">pedestrian</td>
-<td style="text-align: left;">car</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3100</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: left;">car</td>
-<td style="text-align: left;">NOV</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3104</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: left;">motorcycle</td>
-<td style="text-align: left;">car</td>
-</tr>
+  <tr>
+   <td style="text-align:right;"> 1397 </td>
+   <td style="text-align:right;"> 2009 </td>
+   <td style="text-align:left;"> Male </td>
+   <td style="text-align:right;"> 52 </td>
+   <td style="text-align:left;"> pedestrian </td>
+   <td style="text-align:left;"> motorcycle </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3097 </td>
+   <td style="text-align:right;"> 2009 </td>
+   <td style="text-align:left;"> Male </td>
+   <td style="text-align:right;"> 36 </td>
+   <td style="text-align:left;"> pedestrian </td>
+   <td style="text-align:left;"> car </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3098 </td>
+   <td style="text-align:right;"> 2009 </td>
+   <td style="text-align:left;"> Female </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:left;"> pedestrian </td>
+   <td style="text-align:left;"> bus </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3099 </td>
+   <td style="text-align:right;"> 2009 </td>
+   <td style="text-align:left;"> Male </td>
+   <td style="text-align:right;"> 85 </td>
+   <td style="text-align:left;"> pedestrian </td>
+   <td style="text-align:left;"> car </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3100 </td>
+   <td style="text-align:right;"> 2009 </td>
+   <td style="text-align:left;"> Male </td>
+   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:left;"> car </td>
+   <td style="text-align:left;"> NOV </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3104 </td>
+   <td style="text-align:right;"> 2009 </td>
+   <td style="text-align:left;"> Male </td>
+   <td style="text-align:right;"> 26 </td>
+   <td style="text-align:left;"> motorcycle </td>
+   <td style="text-align:left;"> car </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
 </div>
 </section>
@@ -739,61 +695,63 @@
 </ul></li>
 </ul>
 <div class="cell-output-display">
+
 <table>
-<thead>
-<tr class="header">
-<th style="text-align: right;">participant_id</th>
-<th style="text-align: right;">age</th>
-<th style="text-align: left;">sex</th>
-<th style="text-align: left;">age_cat</th>
-<th style="text-align: right;">ltpa_marg_met</th>
-</tr>
-</thead>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> participant_id </th>
+   <th style="text-align:right;"> age </th>
+   <th style="text-align:left;"> sex </th>
+   <th style="text-align:left;"> age_cat </th>
+   <th style="text-align:right;"> ltpa_marg_met </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">59</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">55-59</td>
-<td style="text-align: right;">12.25</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: right;">0.00</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">37</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">35-39</td>
-<td style="text-align: right;">0.00</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: right;">5.83</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: right;">0.00</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">43</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">40-44</td>
-<td style="text-align: right;">5.83</td>
-</tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 59 </td>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 55-59 </td>
+   <td style="text-align:right;"> 12.25 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 20-24 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 37 </td>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 35-39 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 15-19 </td>
+   <td style="text-align:right;"> 5.83 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:left;"> male </td>
+   <td style="text-align:left;"> 15-19 </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 43 </td>
+   <td style="text-align:left;"> male </td>
+   <td style="text-align:left;"> 40-44 </td>
+   <td style="text-align:right;"> 5.83 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
 </section>
 <section id="burden-of-disease-bod-dataset-12" class="slide level2">
@@ -805,111 +763,102 @@
 <li class="fragment"><strong>measure</strong>: Deaths or Years of Life Lost (YLLs)</li>
 <li class="fragment"><strong>age</strong>: age group - usually a five year band as integer</li>
 <li class="fragment"><strong>cause</strong>: cause/disease (<em>details later on</em>)</li>
-<li class="fragment"><strong>population</strong>: population size</li>
-<li class="fragment"><strong>mix_age</strong>: minimum age in integer for the current age group</li>
-<li class="fragment"><strong>max_age</strong>: maximum age in integer for the current age group</li>
-<li class="fragment"><strong>rate</strong>: rate of risk of measure</li>
-<li class="fragment"><strong>burden</strong>: burden of the measure</li>
+<li class="fragment"><strong>population</strong>: population size by age and gender group</li>
+<li class="fragment"><strong>mix_age</strong>: minimum age in integer for the current age and gender group</li>
+<li class="fragment"><strong>max_age</strong>: maximum age in integer for the current age and gender group</li>
+<li class="fragment"><strong>rate</strong>: rate of risk of measure per person</li>
+<li class="fragment"><strong>burden</strong>: burden of the measure for the <em>population</em></li>
 </ul></li>
 </ul>
 </section>
 <section id="burden-of-disease-bod-dataset-22" class="slide level2">
 <h2>Burden of Disease (BoD) dataset (2/2)</h2>
 <div class="cell-output-display">
+
 <table>
-<colgroup>
-<col style="width: 26%">
-<col style="width: 7%">
-<col style="width: 6%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 10%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">measure</th>
-<th style="text-align: left;">sex</th>
-<th style="text-align: left;">age</th>
-<th style="text-align: left;">cause</th>
-<th style="text-align: right;">population</th>
-<th style="text-align: right;">min_age</th>
-<th style="text-align: right;">max_age</th>
-<th style="text-align: right;">rate</th>
-<th style="text-align: right;">burden</th>
-</tr>
-</thead>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> measure </th>
+   <th style="text-align:left;"> sex </th>
+   <th style="text-align:left;"> age </th>
+   <th style="text-align:left;"> cause </th>
+   <th style="text-align:right;"> population </th>
+   <th style="text-align:right;"> min_age </th>
+   <th style="text-align:right;"> max_age </th>
+   <th style="text-align:right;"> rate </th>
+   <th style="text-align:right;"> burden </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">Deaths</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: left;">All causes</td>
-<td style="text-align: right;">421705</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">0.0003508</td>
-<td style="text-align: right;">147.9347</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">YLLs (Years of Life Lost)</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: left;">All causes</td>
-<td style="text-align: right;">421705</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">0.0250641</td>
-<td style="text-align: right;">10569.6710</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Deaths</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: left;">All causes</td>
-<td style="text-align: right;">420552</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">0.0012150</td>
-<td style="text-align: right;">510.9531</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">YLLs (Years of Life Lost)</td>
-<td style="text-align: left;">male</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: left;">All causes</td>
-<td style="text-align: right;">420552</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">0.0866981</td>
-<td style="text-align: right;">36461.0748</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Deaths</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: left;">All causes</td>
-<td style="text-align: right;">502227</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">24</td>
-<td style="text-align: right;">0.0004476</td>
-<td style="text-align: right;">224.7849</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">YLLs (Years of Life Lost)</td>
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: left;">All causes</td>
-<td style="text-align: right;">502227</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">24</td>
-<td style="text-align: right;">0.0297947</td>
-<td style="text-align: right;">14963.6918</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> Deaths </td>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 15-19 </td>
+   <td style="text-align:left;"> All causes </td>
+   <td style="text-align:right;"> 421705 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 0.0003508 </td>
+   <td style="text-align:right;"> 147.9347 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> YLLs (Years of Life Lost) </td>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 15-19 </td>
+   <td style="text-align:left;"> All causes </td>
+   <td style="text-align:right;"> 421705 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 0.0250641 </td>
+   <td style="text-align:right;"> 10569.6710 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Deaths </td>
+   <td style="text-align:left;"> male </td>
+   <td style="text-align:left;"> 15-19 </td>
+   <td style="text-align:left;"> All causes </td>
+   <td style="text-align:right;"> 420552 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 0.0012150 </td>
+   <td style="text-align:right;"> 510.9531 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> YLLs (Years of Life Lost) </td>
+   <td style="text-align:left;"> male </td>
+   <td style="text-align:left;"> 15-19 </td>
+   <td style="text-align:left;"> All causes </td>
+   <td style="text-align:right;"> 420552 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 0.0866981 </td>
+   <td style="text-align:right;"> 36461.0748 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Deaths </td>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 20-24 </td>
+   <td style="text-align:left;"> All causes </td>
+   <td style="text-align:right;"> 502227 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 24 </td>
+   <td style="text-align:right;"> 0.0004476 </td>
+   <td style="text-align:right;"> 224.7849 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> YLLs (Years of Life Lost) </td>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 20-24 </td>
+   <td style="text-align:left;"> All causes </td>
+   <td style="text-align:right;"> 502227 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 24 </td>
+   <td style="text-align:right;"> 0.0297947 </td>
+   <td style="text-align:right;"> 14963.6918 </td>
+  </tr>
 </tbody>
 </table>
+
 </div>
 </section>
 <section id="population-dataset" class="slide level2">
@@ -924,53 +873,68 @@
 </ul></li>
 </ul>
 <div class="cell-output-display">
+
 <table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">sex</th>
-<th style="text-align: left;">age</th>
-<th style="text-align: right;">population</th>
-</tr>
-</thead>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> sex </th>
+   <th style="text-align:left;"> age </th>
+   <th style="text-align:right;"> population </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">15-19</td>
-<td style="text-align: right;">421705</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">20-24</td>
-<td style="text-align: right;">502227</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">25-29</td>
-<td style="text-align: right;">554888</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">30-34</td>
-<td style="text-align: right;">528818</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">35-39</td>
-<td style="text-align: right;">465661</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">female</td>
-<td style="text-align: left;">40-44</td>
-<td style="text-align: right;">427807</td>
-</tr>
+  <tr>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 15-19 </td>
+   <td style="text-align:right;"> 421705 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 20-24 </td>
+   <td style="text-align:right;"> 502227 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 25-29 </td>
+   <td style="text-align:right;"> 554888 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 30-34 </td>
+   <td style="text-align:right;"> 528818 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 35-39 </td>
+   <td style="text-align:right;"> 465661 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> 40-44 </td>
+   <td style="text-align:right;"> 427807 </td>
+  </tr>
 </tbody>
 </table>
-</div>
-
-<img src="https://www.mrc-epid.cam.ac.uk/wp-content/uploads/2021/10/colour-epi-logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
+<section id="model-structure" class="slide level2">
+<h2>Model Structure</h2>
+
+<img data-src="images/paste-82FCA569.png" class="r-stretch"></section></section>
+<section id="why-model" class="title-slide slide level1 center">
+<h1>Why model?</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://xkcd.com/1838/"><img data-src="images/machine_learning_2x.png"></a></p>
+<p></p><figcaption aria-hidden="true">Courtesy: Randall Monroe, xkcd: &lt;https://xkcd.com/1838&gt;</figcaption><p></p>
+</figure>
+</div>
+<p><img src="https://www.mrc-epid.cam.ac.uk/wp-content/uploads/2021/10/colour-epi-logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</section>
     </div>
   </div>
 

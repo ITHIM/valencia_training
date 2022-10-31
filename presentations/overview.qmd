@@ -8,20 +8,26 @@ format:
     width: 1920
     height: 1080
     logo: "https://www.mrc-epid.cam.ac.uk/wp-content/uploads/2021/10/colour-epi-logo.png"
-    #footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
+    # footer: "[ITHIM](https://ithim.github.io/valencia_training/training_materials//)"
     css: ["theme/theme.css"]
-    theme: simple
+    theme: [simple, custom.scss]
   html:
     code-copy: false
 editor: visual
 execute: 
   echo: true
+  warning: false
+  message: false
   size: "huge"
 ---
 
 # Getting Started with Required Software
 
 ## Install R
+
+```{r}
+knitr::opts_chunk$set(class.source = "watch-out")
+```
 
 Please install R (version: R-4.2.1) from: [https://cran.r-project.org/](The%20Comprehensive%20R%20Archive%20Network)
 
@@ -37,37 +43,30 @@ Please install RStudio desktop from: [Latest RStudio Desktop](https://www.rstudi
 
 ## Clone ITHIM-R repo
 
-Please clone <https://github.com/ITHIM/ITHIM-R.git>(https://github.com/ITHIM/ITHIM-R.git) via RStudio
+Please clone <https://github.com/ITHIM/valencia_training> via RStudio
 
-::: callout-note
-Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
-:::
-
-## Open the project
-
-Please open the When you click the **Render** button a document will be generated that includes:
-
--   Content authored with markdown
--   Output from executable code
+![](images/Screenshot%202022-10-31%20at%2021-58-58%20GitHub%20-%20ITHIM_valencia_training.png)
 
 ## Depended packages
 
 Before we start building and installing the **ithim-r** package, we need to install two packages. One is the **remotes** package. Please install using:
 
-```{r, size="large"}
+```{r}
 #| eval: false
 install.packages("remotes")
 ```
 
 Once that is done, please install and load the Dose-Response for Physical Activity **drpa** package by:
 
-```{r, size="large"}
+```{r}
 #| eval: false
 remotes::install_github("meta-analyses/drpa")
 library(drpa)
 
 # install other depended libraries
-install.packages(c("plyr", "dplyr", "tidyr", "readr", "haven", "ggplot2", "plotly", "ReIns", "truncnorm", "distr", "pracma", "data.table", "stringr", "summarytools", "gt", "flextable"))
+install.packages(c("plyr", "dplyr", "tidyr", "readr", "haven",
+                   "ggplot2", "plotly", "ReIns", "truncnorm", "distr", "pracma", "data.table", "stringr", "summarytools",
+                   "gt", "flextable"))
 ```
 
 ## Install the package
@@ -90,10 +89,6 @@ Source: [Keyboard Shortcuts in the RStudio IDE](https://support.rstudio.com/hc/e
 | R                                     | source files - R scripts for functions (that are both internally used and are exported through package interface)                                                                           |
 | DESCRIPTION, NAMESPACE, and README.md | Package meta-data information                                                                                                                                                               |
 | results                               | Outputs of the package are stored here. The most important one being *ithim_object* is stored at: `results/multi_city/io.rds`                                                               |
-
-## Data Structure
-
-## Load package
 
 ```{r}
 #| echo: false
@@ -132,7 +127,7 @@ A single-day travel diary in which each row represents a trip
 
 ```{r}
 #| echo: false
-io[[city]]$trip_scen_sets |> filter(scenario == "Baseline") |> dplyr::select(-scenario) |> arrange(trip_id) |> head() |> knitr::kable()
+io[[city]]$trip_scen_sets |> filter(scenario == "Baseline") |> dplyr::select(-c(scenario, ends_with("cat"))) |> arrange(trip_id) |> head() |> knitr::kable() |> kableExtra::landscape()
 
 ```
 
@@ -212,3 +207,11 @@ The demographic information is by age and gender. This also comes from **IHME's*
 #| echo: false
 knitr::kable(io[[city]]$demographic |> head())
 ```
+
+## Model Structure
+
+![](images/paste-82FCA569.png)
+
+# Why model?
+
+[![Courtesy: Randall Monroe, xkcd: \<https://xkcd.com/1838\>](images/machine_learning_2x.png)](https://xkcd.com/1838/)

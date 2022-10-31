@@ -7,11 +7,6 @@ library(tidyverse)
 library(readxl)
 library(truncnorm)
 
-# Load helpful libraries for EDA
-# library(plyr)
-# library(janitor)
-# library(esquisse)
-
 # Install drpa is not already installed
 if (!require("drpa",character.only = TRUE)) {
   print('Installing "drpa" package...')

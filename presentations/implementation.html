@@ -404,7 +404,7 @@
 </section>
 <section id="select-case-study" class="slide level2">
 <h2>Select case study</h2>
-<p>Open <code>multi_city_script.R</code> from the files section, and make sure that the <code>sao_paulo</code> is selected in the <code>cities</code> variable. Also please make sure the city and global parameters are set to be read and loaded, like this:</p>
+<p>Open <code>multi_city_script.R</code> from the files section, and please make sure that the <code>sao_paulo</code> is selected in the <code>cities</code> variable. Also please make sure the city and global parameters are set to be read and loaded, like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Specify list of cities. We are only using SP for now.</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>cities <span class="ot">&lt;-</span> <span class="st">'sao_paulo'</span></span>
@@ -413,14 +413,176 @@
 <span id="cb2-5"><a href="#cb2-5"></a>input_parameter_file <span class="ot">&lt;-</span> <span class="st">"InputParameters_v18.0.xlsx"</span></span>
 <span id="cb2-6"><a href="#cb2-6"></a></span>
 <span id="cb2-7"><a href="#cb2-7"></a><span class="co"># Read in all params through this script</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">source</span>(<span class="st">"helpful_scripts/load_input_params.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="co">#source("helpful_scripts/load_input_params.R")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
-<section id="section" class="title-slide slide level1 center">
-<h1></h1>
+<section id="what-if-scenarios" class="title-slide slide level1 center">
+<h1>What-if Scenarios</h1>
+<p>We created four scenarios where each mode is increased by <code>5%</code>. The four scenarios are: cycle, car, bus and motorcycle scenarios where in each case, we increase their share of trips by <code>5%</code> each. Table below shows <code>trip proportion</code> for <code>Sao Paulo</code>.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Travel mode</th>
+<th>BASELINE</th>
+<th>Cycle Scenario</th>
+<th>Car Scenario</th>
+<th>Bus Scenario</th>
+<th>Motorcycle Scenario</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>car</td>
+<td><em>33.0</em></td>
+<td>31.2</td>
+<td><strong>38.0</strong></td>
+<td>28.8</td>
+<td>31.0</td>
+</tr>
+<tr class="even">
+<td>motorcycle</td>
+<td><em>2.3</em></td>
+<td>2.2</td>
+<td>2.1</td>
+<td>2.0</td>
+<td><strong>7.3</strong></td>
+</tr>
+<tr class="odd">
+<td>bus</td>
+<td><em>18.6</em></td>
+<td>17.5</td>
+<td>16.2</td>
+<td><strong>23.6</strong></td>
+<td>17.3</td>
+</tr>
+<tr class="even">
+<td>cycle</td>
+<td><em>1.0</em></td>
+<td><strong>6.0</strong></td>
+<td>0.9</td>
+<td>0.9</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+</section>
 
-<img src="https://www.mrc-epid.cam.ac.uk/wp-content/uploads/2021/10/colour-epi-logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<section id="causedisease-table" class="title-slide slide level1 center">
+<h1>Cause/disease Table</h1>
+<p>Table of the considered causes/diseases. <code>1</code> in the cell below represents whether the cause/disease has an effect on the pathway. If there is <code>1</code> on both <code>PA</code> and <code>AP</code> pathways, we multiply their <code>Relative Risks</code> to capture the interaction.</p>
+<table>
+<colgroup>
+<col style="width: 48%">
+<col style="width: 25%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>GBD_name</th>
+<th>air_pollution</th>
+<th>physical_activity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All causes</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Ischemic heart disease</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Neoplasms</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Tracheal, bronchus, and lung cancer</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Chronic obstructive pulmonary disease</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Stroke</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Diabetes mellitus type 2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Lower respiratory infections</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Breast cancer</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Colon and rectum cancer</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Uterine cancer</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Liver cancer</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Cardiovascular diseases</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Alzheimer’s disease and other dementias</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Myeloma</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Parkinson’s disease</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</section>
 
+<section id="causedisease-level" class="title-slide slide level1 center">
+<h1>Cause/disease level</h1>
+<p>We are operating at three difference levels of causes/diseases:</p>
+<p><img data-src="images/paste-5F7B6997.png" width="772" height="349"></p>
+<p><img src="https://www.mrc-epid.cam.ac.uk/wp-content/uploads/2021/10/colour-epi-logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><a href="https://ithim.github.io/valencia_training/training_materials//">ITHIM</a></p>
 </div>
 </section>
     </div>
