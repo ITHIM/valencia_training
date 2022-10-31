@@ -1,0 +1,155 @@
+---
+title: "ITHIM Training Session"
+author: "Ali Abbas"
+format:
+  html:
+    light: flatly
+    dark: darkly
+    toc: true
+    
+date: 11/01/2022
+date-format: long
+
+reference-location: margin
+citation-location: margin
+    
+number-sections: true
+crossref:
+  chapters: true
+editor: visual
+---
+
+# Integrated Transport and Health Impact Model - ITHIM
+
+Introduction, training, and expertise
+
+**Venue**: Valencia NH Centre, Calle Ricardo Micó 1 -- 46009 Valencia Meeting room: Gregal, Classroom style
+
+Tuesday, Nov. 1st, 9 AM -- 5 PM
+
+## **Overview and objectives:**
+
+Bringing together partners of the JIBE project (expert and stakeholders in urban transportation planning), this training session will showcase how high-resolution modeling of transportation impacts on health (road traffic injuries, air pollution, physical activity) can facilitate city and regional policymaking. Our goal is to open up new opportunities for transportation planning, with an aim to embed road traffic injuries, physical activity, air quality and health benefits in shaping real-world policy decisions by:
+
+1.  *Understanding travel behaviors, by getting the appropriate data (demographics, Road Traffic Injuries (RTI), Physical Activity (PA) and Air Pollution (AP) exposure) and then developing policy inspired what-if-scenarios.*
+2.  *Quantifying health impact of travel on health, by capturing changes in Physical Activity (PA), Air Pollution (AP) and Road Traffic Injuries exposures.*
+3.  *Learning objectives: install/manage an R package, skills to use RStudio, Exploratory Data Analysis, health impact assessment, dose-response relationships of both Physical Activity (PA) and Air Pollution (AP) and causes/diseases; also a deeper understanding of these exposures by looking at their impacts on health, and learning/managing pivot tables for result analysis using MS excel.*
+
+# **Work session 1: Introduction to Integrated Travel and Health Impact Model (ITHIM)**
+
+**Host** : James, Ali, Haneen and Lambed
+
+## **Goal**
+
+To give a general overview of Integrated Travel and Health Impact Model (ITHIM) -- looking at past, current and future outlook.
+
+## **Objectives**
+
+At the end of the session, participants will have an understanding of:
+
+-   Understanding of ITHIM, a global city level transport and health model.
+-   Data requirements and strengths and weaknesses of the model
+-   Practical overview of the implementation of the ITHIM as an R package ITHIM-R
+
+## **Description**
+
+In the first session's presentation, participants understand the main objectives and the elements of ITHIM, while developing a better understanding on how transport affects health outcomes. In the second presentation, we understand how Air Pollution fits into the model, and in the third presentation, we bring in Physical Activity. Lastly we are going to showcase the underpinnings of the model -- by focusing on its structure and data requirements.
+
+**Schedule** : 09:00-10:30
+
+**09:00-09:45 Presentations** :
+
+-   Introduction to ITHIM by James (15 mins)
+-   Effects of transport related Air Pollution on Health by Haneen (15 mins)
+-   Bringing transport and the background physical activity together by Lambed (15 mins)
+
+**09:45-09:50 break**
+
+**09:50-10:30 Overview of the ITHIM-R package. (by Ali)**
+
+-   Help setup cloud workspace for participants (10 mins)
+-   Presentation on the overview and structure of ITHIM-R package (20 mins)
+-   Practical tour of the package (20 mins)
+
+# **Work session 2: Running ITHIM-R model on a case study city**
+
+**Host** : Ali
+
+## **Goal**
+
+Application of the ITHIM-R model to a case study city, and generate the outputs.
+
+## **Objectives**
+
+At the end of the session, participants will have an understanding of:
+
+-   The practical implementation of ITHIM-R to a case-study
+-   Interaction of exposure pathways such as physical activity, air pollution and road traffic injuries
+-   Quantifiable impacts of transport on overall population and subgroups
+
+## **Description**
+
+In the second session, participants are expected to get involved. It focuses on the practical implementation of the ITHIM-R package. Firstly, Ali takes you through a predefined scenario for a case study, and runs the model and generates the outputs. Secondly, we have a closer look at the various outputs for changes in Physical Activity (PA) and Air Pollution (AP). Lastly we focus on Injury outcomes by breaking the results by distance, mode and population.
+
+**Schedule: 11:00-12:30**
+
+**Practical demo:**
+
+-   Running the model, and looking at the structure of various outputs (25 mins)
+-   Generate markdown documents for changes in trip distribution and summary statistics for Physical Activity and Air Pollution exposures (20 mins)
+-   Break (5 mins)
+-   Import injury outcomes into MS excel and create pivot tables for all scenarios and pathway specific outcomes (45 mins)
+
+**Lunch Break: 12:30-13:30**
+
+# **Work session 3: User driven application of ITHIM-R model**
+
+**Host** : Ali
+
+## **Goal**
+
+Exercises driven changes of ITHIM-R model to a case study city, and generate the outputs.
+
+## **Objectives**
+
+At the end of the session, participants will have an understanding of:
+
+-   The practical implementation of ITHIM-R to a case-study
+-   Interaction of exposure pathways such as physical activity, air pollution and road traffic injuries
+-   Quantifiable impacts of transport on overall population and subgroups
+
+## **Description**
+
+In the third session, having familiarized with the model and its outputs, participants are going to run the model and produce outputs following exercises. Firstly, participants are going to understand the baseline behaviors of a case-study city. This means looking at the summary statistics of trips, air pollution concentration and physical activity profiles. Secondly, we will look at road traffic injuries. Thirdly, by following exercises, the model is run and results are produced.
+
+**Schedule: 13:30-15:00**
+
+Model run and deeper understanding of case-study at baseline:
+
+-   Running the model and produce various outputs (20 mins)
+-   Hands-on understanding of the case-study city. Looking at trip distribution, physical activity profiles and air pollution exposures (40 mins)
+-   Break (10 mins)
+-   Understand Road Traffic Injuries (RTI) (20 mins)
+
+**Break: 15:00-15:30**
+
+# **Work session 4: Dose-response of Physical Activity and causes/diseases**
+
+**Host** : Ali
+
+## **Goal**
+
+Understanding changes in Physical Activity (PA) and its impact on health burden
+
+## **Objectives**
+
+At the end of the session, participants will have an understanding of:
+
+-   Dose-response relationship of Physical Activity and various causes/diseases
+-   Application of Comparative Risk Assessment (CRA) on health burden calculations
+
+## **Description**
+
+In the final session, we focus on dose-response relationship of physical activity to various diseases and how it is integrated in ITHIM-R package. Firstly, we look under the hood how the model is capturing non-travel related physical activity into account. We then look at how overall physical activity against diseases/causes captures the changes in various scenarios using Comparative Risk Assessment (CRA). Thirdly, we spend time understanding how various levels of diseases/causes are covered by the model using DRPA package. Documentation is available at: <https://meta-analyses.github.io/drpa/drpa.html>.
+
+We also have an interactive Shiny application which displays PA's relationship with causes and diseases here: <https://shiny.mrc-epid.cam.ac.uk/meta-analyses-physical-activity/>

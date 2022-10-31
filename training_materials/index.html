@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.624">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ali Abbas">
+<meta name="dcterms.date" content="2022-11-01">
+
+<title>ITHIM Training Session</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#integrated-transport-and-health-impact-model---ithim" id="toc-integrated-transport-and-health-impact-model---ithim" class="nav-link active" data-scroll-target="#integrated-transport-and-health-impact-model---ithim"> <span class="header-section-number">1</span> Integrated Transport and Health Impact Model - ITHIM</a>
+  <ul class="collapse">
+  <li><a href="#overview-and-objectives" id="toc-overview-and-objectives" class="nav-link" data-scroll-target="#overview-and-objectives"> <span class="header-section-number">1.1</span> <strong>Overview and objectives:</strong></a></li>
+  </ul></li>
+  <li><a href="#work-session-1-introduction-to-integrated-travel-and-health-impact-model-ithim" id="toc-work-session-1-introduction-to-integrated-travel-and-health-impact-model-ithim" class="nav-link" data-scroll-target="#work-session-1-introduction-to-integrated-travel-and-health-impact-model-ithim"> <span class="header-section-number">2</span> <strong>Work session 1: Introduction to Integrated Travel and Health Impact Model (ITHIM)</strong></a>
+  <ul class="collapse">
+  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal"> <span class="header-section-number">2.1</span> <strong>Goal</strong></a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"> <span class="header-section-number">2.2</span> <strong>Objectives</strong></a></li>
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"> <span class="header-section-number">2.3</span> <strong>Description</strong></a></li>
+  </ul></li>
+  <li><a href="#work-session-2-running-ithim-r-model-on-a-case-study-city" id="toc-work-session-2-running-ithim-r-model-on-a-case-study-city" class="nav-link" data-scroll-target="#work-session-2-running-ithim-r-model-on-a-case-study-city"> <span class="header-section-number">3</span> <strong>Work session 2: Running ITHIM-R model on a case study city</strong></a>
+  <ul class="collapse">
+  <li><a href="#goal-1" id="toc-goal-1" class="nav-link" data-scroll-target="#goal-1"> <span class="header-section-number">3.1</span> <strong>Goal</strong></a></li>
+  <li><a href="#objectives-1" id="toc-objectives-1" class="nav-link" data-scroll-target="#objectives-1"> <span class="header-section-number">3.2</span> <strong>Objectives</strong></a></li>
+  <li><a href="#description-1" id="toc-description-1" class="nav-link" data-scroll-target="#description-1"> <span class="header-section-number">3.3</span> <strong>Description</strong></a></li>
+  </ul></li>
+  <li><a href="#work-session-3-user-driven-application-of-ithim-r-model" id="toc-work-session-3-user-driven-application-of-ithim-r-model" class="nav-link" data-scroll-target="#work-session-3-user-driven-application-of-ithim-r-model"> <span class="header-section-number">4</span> <strong>Work session 3: User driven application of ITHIM-R model</strong></a>
+  <ul class="collapse">
+  <li><a href="#goal-2" id="toc-goal-2" class="nav-link" data-scroll-target="#goal-2"> <span class="header-section-number">4.1</span> <strong>Goal</strong></a></li>
+  <li><a href="#objectives-2" id="toc-objectives-2" class="nav-link" data-scroll-target="#objectives-2"> <span class="header-section-number">4.2</span> <strong>Objectives</strong></a></li>
+  <li><a href="#description-2" id="toc-description-2" class="nav-link" data-scroll-target="#description-2"> <span class="header-section-number">4.3</span> <strong>Description</strong></a></li>
+  </ul></li>
+  <li><a href="#work-session-4-dose-response-of-physical-activity-and-causesdiseases" id="toc-work-session-4-dose-response-of-physical-activity-and-causesdiseases" class="nav-link" data-scroll-target="#work-session-4-dose-response-of-physical-activity-and-causesdiseases"> <span class="header-section-number">5</span> <strong>Work session 4: Dose-response of Physical Activity and causes/diseases</strong></a>
+  <ul class="collapse">
+  <li><a href="#goal-3" id="toc-goal-3" class="nav-link" data-scroll-target="#goal-3"> <span class="header-section-number">5.1</span> <strong>Goal</strong></a></li>
+  <li><a href="#objectives-3" id="toc-objectives-3" class="nav-link" data-scroll-target="#objectives-3"> <span class="header-section-number">5.2</span> <strong>Objectives</strong></a></li>
+  <li><a href="#description-3" id="toc-description-3" class="nav-link" data-scroll-target="#description-3"> <span class="header-section-number">5.3</span> <strong>Description</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">ITHIM Training Session</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ali Abbas </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 1, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="integrated-transport-and-health-impact-model---ithim" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Integrated Transport and Health Impact Model - ITHIM</h1>
+<p>Introduction, training, and expertise</p>
+<p><strong>Venue</strong>: Valencia NH Centre, Calle Ricardo Micó 1 – 46009 Valencia Meeting room: Gregal, Classroom style</p>
+<p>Tuesday, Nov.&nbsp;1st, 9 AM – 5 PM</p>
+<section id="overview-and-objectives" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="overview-and-objectives"><span class="header-section-number">1.1</span> <strong>Overview and objectives:</strong></h2>
+<p>Bringing together partners of the JIBE project (expert and stakeholders in urban transportation planning), this training session will showcase how high-resolution modeling of transportation impacts on health (road traffic injuries, air pollution, physical activity) can facilitate city and regional policymaking. Our goal is to open up new opportunities for transportation planning, with an aim to embed road traffic injuries, physical activity, air quality and health benefits in shaping real-world policy decisions by:</p>
+<ol type="1">
+<li><em>Understanding travel behaviors, by getting the appropriate data (demographics, Road Traffic Injuries (RTI), Physical Activity (PA) and Air Pollution (AP) exposure) and then developing policy inspired what-if-scenarios.</em></li>
+<li><em>Quantifying health impact of travel on health, by capturing changes in Physical Activity (PA), Air Pollution (AP) and Road Traffic Injuries exposures.</em></li>
+<li><em>Learning objectives: install/manage an R package, skills to use RStudio, Exploratory Data Analysis, health impact assessment, dose-response relationships of both Physical Activity (PA) and Air Pollution (AP) and causes/diseases; also a deeper understanding of these exposures by looking at their impacts on health, and learning/managing pivot tables for result analysis using MS excel.</em></li>
+</ol>
+</section>
+</section>
+<section id="work-session-1-introduction-to-integrated-travel-and-health-impact-model-ithim" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> <strong>Work session 1: Introduction to Integrated Travel and Health Impact Model (ITHIM)</strong></h1>
+<p><strong>Host</strong> : James, Ali, Haneen and Lambed</p>
+<section id="goal" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="goal"><span class="header-section-number">2.1</span> <strong>Goal</strong></h2>
+<p>To give a general overview of Integrated Travel and Health Impact Model (ITHIM) – looking at past, current and future outlook.</p>
+</section>
+<section id="objectives" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="objectives"><span class="header-section-number">2.2</span> <strong>Objectives</strong></h2>
+<p>At the end of the session, participants will have an understanding of:</p>
+<ul>
+<li>Understanding of ITHIM, a global city level transport and health model.</li>
+<li>Data requirements and strengths and weaknesses of the model</li>
+<li>Practical overview of the implementation of the ITHIM as an R package ITHIM-R</li>
+</ul>
+</section>
+<section id="description" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="description"><span class="header-section-number">2.3</span> <strong>Description</strong></h2>
+<p>In the first session’s presentation, participants understand the main objectives and the elements of ITHIM, while developing a better understanding on how transport affects health outcomes. In the second presentation, we understand how Air Pollution fits into the model, and in the third presentation, we bring in Physical Activity. Lastly we are going to showcase the underpinnings of the model – by focusing on its structure and data requirements.</p>
+<p><strong>Schedule</strong> : 09:00-10:30</p>
+<p><strong>09:00-09:45 Presentations</strong> :</p>
+<ul>
+<li>Introduction to ITHIM by James (15 mins)</li>
+<li>Effects of transport related Air Pollution on Health by Haneen (15 mins)</li>
+<li>Bringing transport and the background physical activity together by Lambed (15 mins)</li>
+</ul>
+<p><strong>09:45-09:50 break</strong></p>
+<p><strong>09:50-10:30 Overview of the ITHIM-R package. (by Ali)</strong></p>
+<ul>
+<li>Help setup cloud workspace for participants (10 mins)</li>
+<li>Presentation on the overview and structure of ITHIM-R package (20 mins)</li>
+<li>Practical tour of the package (20 mins)</li>
+</ul>
+</section>
+</section>
+<section id="work-session-2-running-ithim-r-model-on-a-case-study-city" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> <strong>Work session 2: Running ITHIM-R model on a case study city</strong></h1>
+<p><strong>Host</strong> : Ali</p>
+<section id="goal-1" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="goal-1"><span class="header-section-number">3.1</span> <strong>Goal</strong></h2>
+<p>Application of the ITHIM-R model to a case study city, and generate the outputs.</p>
+</section>
+<section id="objectives-1" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="objectives-1"><span class="header-section-number">3.2</span> <strong>Objectives</strong></h2>
+<p>At the end of the session, participants will have an understanding of:</p>
+<ul>
+<li>The practical implementation of ITHIM-R to a case-study</li>
+<li>Interaction of exposure pathways such as physical activity, air pollution and road traffic injuries</li>
+<li>Quantifiable impacts of transport on overall population and subgroups</li>
+</ul>
+</section>
+<section id="description-1" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="description-1"><span class="header-section-number">3.3</span> <strong>Description</strong></h2>
+<p>In the second session, participants are expected to get involved. It focuses on the practical implementation of the ITHIM-R package. Firstly, Ali takes you through a predefined scenario for a case study, and runs the model and generates the outputs. Secondly, we have a closer look at the various outputs for changes in Physical Activity (PA) and Air Pollution (AP). Lastly we focus on Injury outcomes by breaking the results by distance, mode and population.</p>
+<p><strong>Schedule: 11:00-12:30</strong></p>
+<p><strong>Practical demo:</strong></p>
+<ul>
+<li>Running the model, and looking at the structure of various outputs (25 mins)</li>
+<li>Generate markdown documents for changes in trip distribution and summary statistics for Physical Activity and Air Pollution exposures (20 mins)</li>
+<li>Break (5 mins)</li>
+<li>Import injury outcomes into MS excel and create pivot tables for all scenarios and pathway specific outcomes (45 mins)</li>
+</ul>
+<p><strong>Lunch Break: 12:30-13:30</strong></p>
+</section>
+</section>
+<section id="work-session-3-user-driven-application-of-ithim-r-model" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> <strong>Work session 3: User driven application of ITHIM-R model</strong></h1>
+<p><strong>Host</strong> : Ali</p>
+<section id="goal-2" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="goal-2"><span class="header-section-number">4.1</span> <strong>Goal</strong></h2>
+<p>Exercises driven changes of ITHIM-R model to a case study city, and generate the outputs.</p>
+</section>
+<section id="objectives-2" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="objectives-2"><span class="header-section-number">4.2</span> <strong>Objectives</strong></h2>
+<p>At the end of the session, participants will have an understanding of:</p>
+<ul>
+<li>The practical implementation of ITHIM-R to a case-study</li>
+<li>Interaction of exposure pathways such as physical activity, air pollution and road traffic injuries</li>
+<li>Quantifiable impacts of transport on overall population and subgroups</li>
+</ul>
+</section>
+<section id="description-2" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="description-2"><span class="header-section-number">4.3</span> <strong>Description</strong></h2>
+<p>In the third session, having familiarized with the model and its outputs, participants are going to run the model and produce outputs following exercises. Firstly, participants are going to understand the baseline behaviors of a case-study city. This means looking at the summary statistics of trips, air pollution concentration and physical activity profiles. Secondly, we will look at road traffic injuries. Thirdly, by following exercises, the model is run and results are produced.</p>
+<p><strong>Schedule: 13:30-15:00</strong></p>
+<p>Model run and deeper understanding of case-study at baseline:</p>
+<ul>
+<li>Running the model and produce various outputs (20 mins)</li>
+<li>Hands-on understanding of the case-study city. Looking at trip distribution, physical activity profiles and air pollution exposures (40 mins)</li>
+<li>Break (10 mins)</li>
+<li>Understand Road Traffic Injuries (RTI) (20 mins)</li>
+</ul>
+<p><strong>Break: 15:00-15:30</strong></p>
+</section>
+</section>
+<section id="work-session-4-dose-response-of-physical-activity-and-causesdiseases" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> <strong>Work session 4: Dose-response of Physical Activity and causes/diseases</strong></h1>
+<p><strong>Host</strong> : Ali</p>
+<section id="goal-3" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="goal-3"><span class="header-section-number">5.1</span> <strong>Goal</strong></h2>
+<p>Understanding changes in Physical Activity (PA) and its impact on health burden</p>
+</section>
+<section id="objectives-3" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="objectives-3"><span class="header-section-number">5.2</span> <strong>Objectives</strong></h2>
+<p>At the end of the session, participants will have an understanding of:</p>
+<ul>
+<li>Dose-response relationship of Physical Activity and various causes/diseases</li>
+<li>Application of Comparative Risk Assessment (CRA) on health burden calculations</li>
+</ul>
+</section>
+<section id="description-3" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="description-3"><span class="header-section-number">5.3</span> <strong>Description</strong></h2>
+<p>In the final session, we focus on dose-response relationship of physical activity to various diseases and how it is integrated in ITHIM-R package. Firstly, we look under the hood how the model is capturing non-travel related physical activity into account. We then look at how overall physical activity against diseases/causes captures the changes in various scenarios using Comparative Risk Assessment (CRA). Thirdly, we spend time understanding how various levels of diseases/causes are covered by the model using DRPA package. Documentation is available at: <a href="https://meta-analyses.github.io/drpa/drpa.html" class="uri">https://meta-analyses.github.io/drpa/drpa.html</a>.</p>
+<p>We also have an interactive Shiny application which displays PA’s relationship with causes and diseases here: <a href="https://shiny.mrc-epid.cam.ac.uk/meta-analyses-physical-activity/" class="uri">https://shiny.mrc-epid.cam.ac.uk/meta-analyses-physical-activity/</a></p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
